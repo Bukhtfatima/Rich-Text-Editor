@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="texteditor.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <div class="textcolor">
+                <input type="color" id="text" value="000" onchange="changecolor(this)">
+            </div>
+            <div class="font-family">
+                <label for="font">Fonts</label>
+                <select id="fonts" onchange="changefont(this)">
+                    <option value="Arial">Arial</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="'Times New Roman'">'Times New Roman'</option>
+                    <option value="'Courier New'">'Courier New'</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="'Trebuchet MS'">'Trebuchet MS'</option>
+                    <option value="'Lucida Console'">'Lucida Console'</option>
+                </select>
+            </div>
+            <div class="textSize">
+                <label for="size">Font Size</label>
+                <select id="size" onchange="changesize(this)">
+                    <option value="1">Small</option>
+                    <option value="3">Medium</option>
+                    <option value="5">Large</option>
+                    <option value="7">Extra Large</option>
+                </select>
+            </div>
+
+            <button id="bold" onclick="bold()"><b>B</b></button>
+            <button id="italic" onclick="italic()"><i>I</i></button>
+            <button id="underline" onclick="underline()"><u>U</u></button>
+        </div>
+
+        <h1>Write your Blog Here</h1>
+        <div id="editor" contenteditable="true"></div>
+    </div>
+    <!-- place where your blog will be display after publishing -->
+    <div class="publishedContainer" id="publishPost">
+        <h2>Published post</h2>
+        <div id="publishedcontent"></div>
+    </div>
+    <button id="Published">Your blog has been published</button>
+    <button id="publish" onclick="publishPost()">Publish</button>
+    <script src="texteditor.js"></script>
+</body>
+
+</html>
